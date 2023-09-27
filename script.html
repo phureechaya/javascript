@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำนวณหาพื้นที่สามเหลี่ยม</title>
+</head>
+
+<style>
+    body {
+        background-image: url('https://img.freepik.com/premium-photo/natural-marble-pattern-background_1258-22162.jpg');
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+</style>
+
+<body>
+    <div style="text-align:center;">
+        <div style="color:rgb(255, 255, 255);">
+            <h1><b>โปรแกรมคำนวณพื้นที่สามเหลี่ยม</b></h1>
+        </div>
+        <div style="color:rgb(255, 255, 255);">
+            <p>สูตร : 1 / 2 * ความยาวฐาน * ความสูง </p>
+        </div>
+        <p style="color:rgb(255, 255, 255);">
+        <label>ฐาน : </label>
+        <input type="number" id="base" placeholder="ความยาวฐาน">
+        </p>
+        <p style="color:rgb(255, 255, 255);">
+        <label>สูง : </label>
+        <input type="number" id="Height" placeholder="ความสูง">
+        </p>
+        <button onclick="calculateTriangle()">คำนวณ</button>
+        <p>
+        <button onclick="resetArea()">รีเซ็ต</button>
+        </p>
+        <div style="color:rgb(255, 255, 255);" id="result"></div>
+    </div>
+
+    <script>
+        function TriangleArea(base, height) {
+            const area = (1 / 2) * base * height;
+            return area;
+          }
+          
+          function calculateTriangle() {
+            const baseArea = parseFloat(document.getElementById('base').value);
+            const heightArea = parseFloat(document.getElementById('Height').value);
+            const triangleArea = TriangleArea(baseArea, heightArea);
+            const result = document.getElementById('result');
+            result.textContent = `พื้นที่สามเหลี่ยม = ${triangleArea}`;
+          }
+          
+          function resetArea() {
+            document.getElementById('base').value = '';
+            document.getElementById('Height').value = '';
+            document.getElementById('result').textContent = '';
+          }
+    </script>
+
+</body>
+
+</html>
